@@ -1,0 +1,84 @@
+print('Version: ' .. lmc.version)
+lmc.minimizeToTray = true
+lmc_minimize()
+
+--NumPad Device--
+lmc_device_set_name('streamdeck','A2D3662')
+lmc_print_devices()
+
+lmc_set_handler('streamdeck', function(button,direction)
+  if (direction == 1) then return end
+
+  --ENTER--
+  if (button == 13) then
+    lmc_send_keys('^{ENTER}', 50)
+
+    --NUM0--
+    elseif (button == 96) then
+    lmc_send_keys('#d', 50)
+
+    --NUM1--
+    elseif (button == 97) then
+    lmc_send_keys('^{NUM1}', 50)
+
+    --NUM2--
+    elseif (button == 98) then
+    lmc_send_keys('^{NUM2}', 50)
+
+    --NUM3--
+    elseif (button == 99) then
+    lmc_send_keys('^{NUM3}', 50)
+
+    --NUM4--
+    elseif (button == 100) then
+    lmc_spawn("C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE")
+ 
+    --NUM5--
+    elseif (button == 101) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe")
+
+    --NUM6--
+    elseif (button == 102) then
+    lmc_spawn("C:\\Users\\digon\\AppData\\Local\\Microsoft\\Teams\\Update.exe --processStart \"Teams.exe\"")
+
+    --NUM7--
+    elseif (button == 103) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://app.powerbi.com/home")
+
+    --NUM8--
+    elseif (button == 104) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://us.flow.microsoft.com/manage/environments/Default-81c5408a-c8f7-459e-bd30-8d4071263391/flows")
+
+    --NUM9--
+    elseif (button == 105) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://cocamar.sharepoint.com/_layouts/15/sharepoint.aspx")
+
+    --NUMDIVIDE--
+    elseif (button == 111) then
+    lmc_send_keys('^{NUMDIVIDE}', 50)
+
+    --NUMMULTIPLY--
+    elseif (button == 106) then
+    lmc_spawn("C:\\Users\\digon\\Downloads\\luamacros\\Apps\\STH.lnk")
+
+    --NUMMINUS--
+    elseif (button == 109) then
+    lmc_spawn("C:\\Windows\\Sysnative\\SnippingTool.exe")
+    lmc_sleep(300)
+    lmc_send_keys('%n')
+
+    --NUMPLUS--
+    elseif (button == 107) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://make.powerapps.com/environments/Default-81c5408a-c8f7-459e-bd30-8d4071263391/home")
+
+    --BACKSPACE--
+    elseif (button == 8) then
+    lmc_spawn("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "https://www.udemy.com/home/my-courses/learning/")
+
+    --NUMDECIMAL--
+    elseif (button == 110) then
+    lmc_send_keys('%{ESC}', 50)
+
+  end
+end
+)
